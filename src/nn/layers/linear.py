@@ -19,17 +19,17 @@ class Linear:
     def forward_propagation(self, input_a: np.ndarray) -> np.ndarray:
         assert input_a.shape[-1] == self.input_dim, "input dimensions dont match"
         self.input_a = input_a
-        return np.dot(input_a, self.neuron_w.T) + self.neuron_b
+        return np.matmul(input_a, self.neuron_w.T) + self.neuron_b
 
     def backpropagation(self, dldz: np.ndarray) -> np.ndarray:
         assert self.input_a is not None, "dzdw is None"
 
         dzda = self.neuron_w
         dzdw = self.input_a
-        self.dldw = np.dot(dldz.T, dzdw)
+        self.dldw = np.matmul(dldz.T, dzdw)
         self.dldb = np.sum(dldz)
 
-        return np.dot(dldz, dzda) # Sums over all the neurons in the layer ahead of the current layer
+        return np.matmul(dldz, dzda) # Sums over all the neurons in the layer ahead of the current layer
 
 
 

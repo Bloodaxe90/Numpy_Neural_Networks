@@ -8,8 +8,7 @@ from src.engine.train import train
 from src.utils.setup import load_MNIST
 
 
-def main():
-    cnn = False
+def main(cnn: bool = True):
     if cnn:
         root_path = "/Users/Eric/PycharmProjects/NN/resources/Fashion_MNIST"
         train_images, train_labels, test_images, test_labels = load_MNIST(root_path, one_dim= False)
@@ -51,4 +50,4 @@ def main():
         )
 
 if __name__ == "__main__":
-    main()
+    main(cnn = False)
