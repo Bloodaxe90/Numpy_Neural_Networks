@@ -54,9 +54,9 @@ def train(model,
 
     if model_name:
         save_model(model_name, model.get_weights_biases())
+        save_results(results, model_name)
 
     print(results)
-    save_results(results)
 
 
 
