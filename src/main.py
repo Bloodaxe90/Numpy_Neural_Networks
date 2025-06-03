@@ -33,9 +33,9 @@ def main():
     )
     LEARNING_RATE: float = 0.0001
     OPTIMIZER: optimizers = StochasticGradientDescent(lr=LEARNING_RATE)
-    EPOCHS: int = 0
+    EPOCHS: int = 2
     BATCH_SIZE: int = 1
-    MODEL_NAME: str = "tset"
+    MODEL_NAME: str = "placeholder"
 
     # MODEL: models = FFNN(
     #         len(train_images[-1]), 700, 500, 700, classes
